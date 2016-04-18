@@ -1,0 +1,11 @@
+<form name="formlogin"  ng-model="datauser">
+            <div class="form-group"> 
+                <label>Login</label>
+                <input class="form-control" ng-model="datauser.login" type="text" required />
+            </div>
+            <div class="form-group"> 
+                <label>Has³o</label>
+                <input class="form-control" ng-model="datauser.haslo" type="text" required />
+            </div>
+            <button type="submit" ng-click="sendform(datauser)"  class="btn btn-default">Submit</button>
+        </form>

@@ -1,0 +1,59 @@
+<div class="row">
+	<div class="col-md-8">
+		<h2>Edycja strony</h2>
+	</div>
+	<div class="col-md-4">
+		<button id="sendEdit" ng-click="sendSite()" class="btn btn-primary">Submit</button>
+	</div>
+</div>
+
+<form method="post" name="editsite">
+	<div class="form-group">
+		<label class="control-label" for="idparent">Id parent</label>
+				<select ng-options="option.id_parent as option.title for option in idParent track by option.id_parent"  ng-model="dataSite.id_parent">
+<option value="" selected="selected">Wybierz</option>
+</select> 
+	
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="titlesite">Tytuł strony</label>
+		<input class="form-control" type="text" id="titlesite" name="titlesite"  ng-model="dataSite.title">
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="contentsite">Zawartość strony</label>
+		<textarea class="form-control" id="contentsite" name="contentsite"  ng-model="dataSite.content"></textarea>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="contentsite">Kategoria</label>
+			<select ng-options="option.id as option.category for option in idCatagoryMenu track by option.id"  ng-model="dataSite.category">
+<option value="" selected="selected">Wybierz</option>
+</select>
+		
+		<!--<input class="form-control" id="categorysite" name="categorysite"  ng-model="dataSite.category">-->
+	</div>
+    <div class="form-group">
+		<label class="control-label" for="linksite">Name - Link</label>
+		<input class="form-control" id="linksite" name="linksite"  ng-model="dataSite.link">
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="metatitlesite">Meta - Title</label>
+		<input class="form-control" id="metatitlesite" name="metatitlesite"  ng-model="dataSite.meta_title">
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="descsite">Meta - Description</label>
+		<input class="form-control" id="descsite" name="descsite"  ng-model="dataSite.meta_description">
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="keysite">Meta - key</label>
+		<input class="form-control" id="keysite" name="keysite"  ng-model="dataSite.meta_key">
+	</div>
+    <div class="checkbox">
+        <label>
+            <input id="componentGalery" name="component_galery"  ng-model="dataSite.component_galery" type="checkbox"> Komponent Galerii
+        </label>
+    </div> 
+</form>
+
+
+{{darek}}
+<!-- <div class="form-group has-error"> <div class="form-group has-success"> -->

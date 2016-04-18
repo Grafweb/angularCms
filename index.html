@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="galery">
+    <head>
+        <meta charset="UTF-8">
+        <base href="/">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title ng-bind="title">Title</title>
+        <meta name="keywords" content="{{keywords}}"/>
+        <meta name="description" content="{{description}}">
+    
+        <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="jquery/jquery.js" type="text/javascript"></script>
+        <script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/tinymce/tinymce.min.js"></script>
+
+        <script src="angular/angular.min.js" type="text/javascript"></script>
+        <script src="angular/angular-route.min.js" type="text/javascript"></script>
+        <script src="angular/angular-resource.min.js" type="text/javascript"></script>
+        <script src="angular/angular-sanitize.min.js" type="text/javascript"></script>
+        <!--general-->
+        <script src="js/app.js" type="text/javascript"></script>
+        <!-- controllers -->
+        <script src="js/controller/FormlogController.js" type="text/javascript"></script>
+        <script src="js/controller/AddSiteController.js" type="text/javascript"></script>
+        <script src="js/controller/ListSiteController.js" type="text/javascript"></script>
+        <script src="js/controller/EditSiteController.js" type="text/javascript"></script>
+        <script src="js/controller/AddGaleryController.js" type="text/javascript"></script>
+        <script src="js/controller/AddCategoryGaleryController.js" type="text/javascript"></script>
+        <script src="js/controller/ContentSiteController.js" type="text/javascript"></script>
+        <script src="js/controller/HomeController.js" type="text/javascript"></script>
+        <!-- services -->
+        <script src="js/services/dataLogin.js" type="text/javascript"></script>
+        <script src="js/services/dataSession.js" type="text/javascript"></script>
+        <script src="js/services/dataSite.js" type="text/javascript"></script>
+        <script src="js/services/siteService.js" type="text/javascript"></script>
+        <script src="js/services/galeryService.js" type="text/javascript"></script>
+        <script src="js/services/listCategoryGaleryService.js" type="text/javascript"></script>
+        <script src="js/services/listFotoGaleryService.js" type="text/javascript"></script>
+        <script src="js/services/addFotosService.js" type="text/javascript"></script>
+        <!-- directive -->
+        <script src="js/directive/menuSite.js" type="text/javascript"></script>
+        <script src="js/directive/menuAdmin.js" type="text/javascript"></script>
+        <script src="js/directive/selectParentSite.js" type="text/javascript"></script>
+        <script src="js/directive/addFotos.js" type="text/javascript"></script>
+        <script src="js/directive/loginStatus.js" type="text/javascript"></script>
+        <!-- filters -->
+        <script src="js/filters/filtersListTitle.js" type="text/javascript"></script>
+        <script src="js/filters/filtersGalery.js" type="text/javascript"></script>
+        <script src="js/filters/filtersDescription.js" type="text/javascript"></script>
+        <script src="js/filters/filtersPagination.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <h2>My CMs Angularjs</h2>
+        <div class="container-fluid" >
+            <div class="row">
+                <div class="col-lg-9"></div>
+                <div class="col-lg-3">
+                    <div data-login-status ></div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" >
+            <div class="row">
+                <div class="col-lg-3">
+                    <h3>Menu</h3>
+                    <div data-menu-admin></div>
+                    <div data-menu-site></div>
+                </div>
+                <div class="col-lg-9">
+                    <!--   <div class="galeria"></div>-->
+                    <div class="container">
+                        <div ng-view class="view-animate"></div>
+                    </div>
+               </div>
+</div>
+</div>
+    </body>
+</html>

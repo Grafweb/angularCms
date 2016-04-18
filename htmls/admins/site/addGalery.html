@@ -1,0 +1,48 @@
+<div class="row">
+	<div class="col-md-8">
+		<h2>Dodaj galerie</h2>
+	</div>
+	<!--<div class="col-md-4">
+		<button id="sendEdit" ng-click="sendSite()" class="btn btn-primary">Submit</button>
+	</div>-->
+</div>
+
+
+<form name="form" enctype="multipart/form-data" id="sendFile" ng-submit="addFotos()" method="post">
+	
+    <div class="form-group"> 
+		<label>Wybierz kategorie</label>
+		<select ng-options="option.id as option.category_name for option in categoryGal track by option.id"  ng-model="category" name="category" ng-required="required" >
+			<option value="" selected="selected">Wybierz</option>
+		</select>
+		<span id="helpBlock" class="help-block"  ng-show="submitted && form.category.$error.required">fill in field</span>
+     </div>
+	
+    
+    <div class="form-group"> 
+		<label ng-click="setCategoryVisible()">Dodaj kategorie galerii</label>
+        <input ng-show="addCategoryVisible" class="form-control" type="text" id="categorygalery" name="categorygalery"  ng-model="categoryGalery">
+    </div>
+	
+    
+    <div class="form-group"> 
+		<label>Załaduj fotkę</label>
+		<input class="form-control" id="file" type="file" multiple name="fotos[]" />
+	</div>
+	<div class="form-group">
+		<button ng-click="submitted=true" type="submit" class="btn btn-default">Submit</button>
+	</div>
+	
+	 {{form.category.$valid}} - {{form.category.$error.required}}
+   valid:   {{form.category.$error}}
+</form>
+
+<div class="row">
+	<div class="col-md-12" id="galery">
+        <img src="/images/{{images.images}}" alt="{{images.category}}" width="120" ng-repeat="images in fotos|filtersGalery:category">
+        
+    </div>
+</div>
+
+
+<!-- <div class="form-group has-error"> <div class="form-group has-success"> -->

@@ -1,0 +1,88 @@
+<h2>List Stron</h2>
+<div class="row">
+	<div class="col-md-1">
+		akcja
+	</div>
+	<div class="col-md-1">
+		id
+	</div>
+	<div class="col-md-1" ng-click="sort('-id_parent',false)">
+		id_parent
+	</div>
+	<div class="col-md-2">
+		title
+		<input type="text" ng-model="searchTitle" >
+	</div>
+	<div class="col-md-3">
+		content
+	</div>
+	<div class="col-md-1">
+		category
+	</div>
+	<div class="col-md-1">
+		meta_title
+	</div>
+	<div class="col-md-1">
+		meta_description
+        <input type="text" ng-model="searchDescription" >
+	</div>
+	<div class="col-md-1" ng-click="site(2)">
+		meta_key
+	</div>
+</div>
+
+<div ng-repeat="item in fullList | filtersListTitle:searchTitle | filtersDescription:searchDescription |  orderBy:-id_parent | pagination: page | limitTo: pageFill" class="row">
+	<div class="col-md-1">
+		<button ng-click="delSite(item.id)">Usuń</button>
+		<button ng-click="editSite(item.id, item.id_parent)">Edycja</button>
+	</div>
+	<div class="col-md-1">{{item.id | number}}</div>
+	<div class="col-md-1">
+		{{item.id_parent | number}}
+		<!--<select name="repeatSelect" id="repeatSelect" ng-model="id_parent">
+      		<option ng-repeat="option in item.id_parent" value="{{item.id_parent}}">{{item.title}}</option>
+    	</select>-->
+		</div>
+	<div class="col-md-2">
+		{{item.title}}
+	</div>
+	<div class="col-md-3">
+		{{item.content}}
+	</div>
+	<div class="col-md-1">
+		{{item.category}}
+	</div>
+	<div class="col-md-1">
+		{{item.meta_title}}
+	</div>
+	<div class="col-md-1">
+		{{item.meta_description}}
+	</div>
+	<div class="col-md-1">
+		{{item.meta_key}}
+	</div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <nav>
+            <ul class="pagination">
+                <li ng-class="{disabled : pagefirst}">
+                <a href ng-click="prevSite()" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+                <!-- class="disabled" -->
+                </li>
+                <li ng-repeat="list in fillPagination">
+                    <a class="points" href ng-click="site(list)"> {{list}} </a>
+                </li>
+                <li ng-class="{disabled : pagelast}">
+                <a href ng-click="nextSite()" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<!-- ng-repeat="item in itemsInObj fullList -->
