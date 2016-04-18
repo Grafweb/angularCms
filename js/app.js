@@ -1,7 +1,5 @@
 "use strict";
 
-/*https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md*/
-/*Angular graph*/
 
 var app = angular.module('galery', ['ngRoute','ngResource','ngSanitize']);
 
@@ -34,8 +32,7 @@ $locationProvider.html5Mode(true);
 
 }]);
 
-//http://blog.kamilbrenk.pl/javascript-sterowany-obietnicami/
-//http://odetocode.com/blogs/scott/archive/2014/05/20/using-resolve-in-angularjs-routes.aspx
+
 
 app.run(function($rootScope, $location, $log, dataLogin, $route){
     var permission = ['/admins'];
