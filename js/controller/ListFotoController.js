@@ -1,27 +1,16 @@
 "use strict";
 
-app.controller('ListFotoController',function($scope, siteService) {
-    
-//	 var deferred = $q.defer();
-	
-    $scope.listFotoCtrl = function(){
-		//categoryGalery
-		console.info('wykonałem');
-		
-/*	var promise = siteService.listFotoGalery().query();
-		promise.then(
-			function(data){
-				console.dir(data);
-				return data;
-			}, 
-			function(err) {
-				console.info('błąd ' + err);
-			}
-		);*/
-		
-	return	siteService.listFotoGalery().query();
-	};
- 
-    
-});
+app.controller('ListFotoController', ListFotoController);
+
+ListFotoController.$inject = ['listFotoGaleryService'];
+function ListFotoController(listFotoGaleryService) {
+    var vm = this;
+    listFotoGaleryService.query( {},
+        function succes(data) {
+           vm.listFotoCtrl = data; 
+        },
+        function error(err) {
+            //add logs
+        });    
+}
     

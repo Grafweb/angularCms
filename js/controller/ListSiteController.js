@@ -1,5 +1,49 @@
 "use strict";
 
+app.controller('ListSiteController', ListSiteController);
+
+ListSiteController.$inject = ['siteService'];
+function ListFotoController(siteService) {
+    var maxSite = 0;
+    var fill = 0;
+    var vm = this;
+    vm.pageFill = 3;
+    vm.page = 0;
+    vm.fillPagination = [];
+   
+    siteService.query(
+        {},
+        function succes(data) {
+           vm.fullList = data; 
+        },
+        function error(err) {
+            //add logs
+        });
+        
+        (vm.page == 0)? vm.pagefirst = true :  vm.pagefirst = false; 
+
+        vm.$watch('page', function(newValue, oldValue) {
+        (vm.page == 0)? vm.pagefirst = true :  vm.pagefirst = false;
+        });
+        
+        vm.site = function(number) {
+            number--;
+            vm.page = number * vm.pageFill;
+        }
+        
+        vm.nextSite = function() {
+            if(vm.page<maxSite) vm.page  = vm.page + vm.pageFill;
+            return;
+        }
+        
+        vm.prevSite = function() {
+            if(vm.page > 0)  vm.page  = vm.page - vm.pageFill;
+            return;
+        }
+    }
+
+
+
 app.controller('ListSiteController',function($scope, $http, $filter, $location, dataSite, siteService) {
     
 //$scope.dataSite = dataSite;
@@ -20,7 +64,7 @@ var listSite = siteService.query();
 
 $scope.fullList = listSite; 
 
- ($scope.page == 0)? $scope.pagefirst = true :  $scope.pagefirst = false; 
+($scope.page == 0)? $scope.pagefirst = true :  $scope.pagefirst = false; 
 
 $scope.$watch('page', function(newValue, oldValue) {
   ($scope.page == 0)? $scope.pagefirst = true :  $scope.pagefirst = false;
@@ -74,11 +118,6 @@ listSite.$promise.then(
     }
 );
 
-
-
-//console.dir("desi" + dssi);
-
-console.info("$scope.fullList.length " + $scope.fullList.length + "$scope.fillPagination" + $scope.fillPagination);
 
 
 

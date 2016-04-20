@@ -15,13 +15,3 @@ function AddCategoryGaleryController(siteService, listCategoryGaleryService) {
             });
 	};    
 }
-
-// app.controller('AddCategoryGaleryController',function($scope, serviceSite) {
-	
-//     $scope.addCategoryGalery = function(){
-// 		//categoryGalery
-// 		console.info('wykonałem');
-// 		serviceSite.addCategoryGalery($scope.categoryGalery).save({category_name: $scope.categoryGalery});
-// 	};
-    
-// });

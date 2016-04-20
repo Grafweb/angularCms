@@ -16,29 +16,3 @@ function AddCategoryGaleryController(siteService, $routeParams) {
         }
     );    
 }
-
-// app.controller('ContentSiteController',function($rootScope, $scope, $http, $log, $routeParams, $route, dataSite, siteService) {
-    
-//    $log.info("$routeParams.site" + $routeParams.site);
-//     $log.info("$route.current.title" + $route.current.title);
-    
-    
-//     $scope.dataSite = siteService.get({idSite: $routeParams.site, column:"link"});
-    
-//    // $scope.dataSite = {};
-//    // $scope.dataSite.title = "darek";
-//   //  $scope.dataSite.content = "description";
-    
-//     // $rootScope.title = "darek";
-//     //     $rootScope.description = "darek";
-//     //     $rootScope.keywords = "darek";
-
-
-// console.info("contentSite use controler");
-
-//     //siteService.getSite($routeParams.id, "id");
-//     //$scope.dataSite = siteService.getSite($routeParams.id);
-    
-//    // $scope.dataSite = siteService.getSite($routeParams.id);
-    
-// });

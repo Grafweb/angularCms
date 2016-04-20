@@ -1,6 +1,6 @@
 "use strict";
 
-app.factory('dataLogin', function($log,$http, $location,  $httpParamSerializerJQLike, dataSession){
+app.factory('dataLoginService', function($log,$http, $location,  $httpParamSerializerJQLike, dataSession){
     return {
         login : function(user){
            var $promise = $http({ 

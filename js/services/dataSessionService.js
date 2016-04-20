@@ -1,6 +1,6 @@
 "use strict";
 
-app.factory('dataSession', function(){
+app.factory('dataSessionService', function(){
     return {
         set : function(key, val){
            return sessionStorage.setItem(key, val);
@@ -11,7 +11,6 @@ app.factory('dataSession', function(){
         del: function(key) {
             return sessionStorage.removeItem(key);
         }
-        
     }       
 });
     
