@@ -1,5 +1,8 @@
 "use strict";
 
-app.factory('listCategoryGaleryService',["$resource", function($resource){
-    return $resource('/data/addCategoryGalery.php');
-}]);
+app.factory('listCategoryGaleryService', listCategoryGaleryService);
+
+listCategoryGaleryService.$inject = ['$resource'];
+function listCategoryGaleryService($resource) {
+    return $resource('/data/addCategoryGalery.php');    
+}

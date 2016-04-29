@@ -1,12 +1,10 @@
 "use strict";
 
-app.filter('pagination', function()
-{
- return function(input, start)
-    {
-        console.info("start" + start);
-       // start = +start;
-        console.info("start" + start);
-        return input.slice(start);
-    };
-});
+app.filter('pagination', pagination);
+
+function pagination() {
+    return function(input, start)
+            {
+               return input.slice(start);
+            };    
+}
