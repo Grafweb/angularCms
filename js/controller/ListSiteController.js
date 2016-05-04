@@ -3,7 +3,7 @@
 app.controller('ListSiteController', ListSiteController);
 
 ListSiteController.$inject = ['siteService'];
-function ListFotoController(siteService) {
+function ListSiteController(siteService) {
     var maxSite = 0;
     var fill = 0;
     var vm = this;

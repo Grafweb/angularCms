@@ -36,7 +36,7 @@ function FotosController($scope, siteService, listCategoryGaleryService, listFot
 		listCategoryGaleryService.save({category_name: $scope.categoryGalery});
 	};
     
-    vm.setCategoryVisible = function () {
+    vm.setCategoryVisible = function() {
        vm.addCategoryVisible ? false : true;
        vm.required ? false : true; 
    }
@@ -69,5 +69,6 @@ function FotosController($scope, siteService, listCategoryGaleryService, listFot
         });
         
         vm.fotos =  listFotoGaleryService.query();  
-}
+    }
 
+}

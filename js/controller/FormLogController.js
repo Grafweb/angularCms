@@ -3,7 +3,7 @@
 app.controller('FormLogController', FormLogController);
 
 FormLogController.$inject = ['$location', 'dataLoginService', 'dataSessionService'];
-function AddCategoryGaleryController($location, dataLoginService, dataSessionService) {
+function FormLogController($location, dataLoginService, dataSessionService) {
     var vm = this;
     
     vm.sendform = function(user) {

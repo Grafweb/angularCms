@@ -3,7 +3,7 @@
 app.controller('ContentSiteController', ContentSiteController);
 
 ContentSiteController.$inject = ['siteService', '$routeParams'];
-function AddCategoryGaleryController(siteService, $routeParams) {
+function ContentSiteController(siteService, $routeParams) {
     var vm = this;
     
      siteService.get(
@@ -16,3 +16,4 @@ function AddCategoryGaleryController(siteService, $routeParams) {
         }
     );    
 }
+    

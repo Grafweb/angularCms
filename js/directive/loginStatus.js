@@ -14,5 +14,5 @@ function loginStatus() {
       scope.logout = function(user){
         dataLoginService.logoutLogin();
     }
+  }
 }
-

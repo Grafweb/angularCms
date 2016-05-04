@@ -1,7 +1,7 @@
 "use strict";
 
 
-var app = angular.module('galery', ['ngRoute','ngResource','ngSanitize']);
+var app = angular.module('cms', ['ngRoute','ngResource','ngSanitize']);
 
 
 app.config(config);
@@ -31,7 +31,7 @@ function runBlock($rootScope, $location, dataLoginService, $route) {
     $rootScope.$on('$routeChangeStart',function(){
 
         if(whereCurrent.search(permission) != -1){    
-           var check = dataLogin.isLogin();
+           var check = dataLoginService.isLogin();
            check.then(function(msg){
                if(!msg.data.login) {
                    $rootScope.loginShow = false;
