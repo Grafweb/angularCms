@@ -11,16 +11,16 @@ function dataSessionService() {
     }
     
     return service;    
-} 
+ 
+    function set(key, val){
+        return sessionStorage.setItem(key, val);
+    }
 
-function set(key, val){
-    return sessionStorage.setItem(key, val);
-}
+    function get(key) {
+        return sessionStorage.getItem(key);
+    }
 
-function get(key) {
-    return sessionStorage.getItem(key);
-}
-
-function del(key) {
-    return sessionStorage.removeItem(key);
+    function del(key) {
+        return sessionStorage.removeItem(key);
+    }
 }

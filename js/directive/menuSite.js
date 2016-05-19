@@ -18,6 +18,3 @@ MenuController.$inject = ['$scope', 'siteService'];
 function MenuController($scope, siteService) {
   $scope.listMenu = siteService.query();
 }
-
-
-//http://stackoverflow.com/questions/16119398/how-can-i-update-meta-tags-in-angularjs

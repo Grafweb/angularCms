@@ -31,7 +31,7 @@
 	</div>
 </div>
 
-<div ng-repeat="item in fullList | filtersListTitle:searchTitle | filtersDescription:searchDescription |  orderBy:-id_parent | pagination: page | limitTo: pageFill" class="row">
+<div ng-repeat="item in list.fullList |  orderBy:-id_parent | pagination:list.page | limitTo: list.pageFill" class="row">
 	<div class="col-md-1">
 		<button ng-click="delSite(item.id)">Usuń</button>
 		<button ng-click="editSite(item.id, item.id_parent)">Edycja</button>
@@ -66,17 +66,17 @@
     <div class="col-md-12">
         <nav>
             <ul class="pagination">
-                <li ng-class="{disabled : pagefirst}">
-                <a href ng-click="prevSite()" aria-label="Previous">
+                <li ng-class="{disabled : list.pagefirst}">
+                <a href ng-click="list.prevSite()" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
                 <!-- class="disabled" -->
                 </li>
-                <li ng-repeat="list in fillPagination">
-                    <a class="points" href ng-click="site(list)"> {{list}} </a>
+                <li ng-repeat="list in list.fillPagination">
+                    <a class="points" href ng-click="list.site(list)"> {{list.list}} </a>
                 </li>
-                <li ng-class="{disabled : pagelast}">
-                <a href ng-click="nextSite()" aria-label="Next">
+                <li ng-class="{disabled : list.pagelast}">
+                <a href ng-click="list.nextSite()" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
                 </li>

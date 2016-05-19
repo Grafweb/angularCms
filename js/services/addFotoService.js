@@ -9,14 +9,15 @@ function addFotosService($http) {
     }
     
     return service;    
-}
 
-function addFiles(plik) {
-    return $http({
-                url: 'data/addGalery.php',
-                method: 'POST',
-                headers: {'Content-Type': undefined },
-                transformRequest: angular.identity,
-                data: plik
-                });
+
+    function addFiles(plik) {
+        return $http({
+                    url: 'data/addGalery.php',
+                    method: 'POST',
+                    headers: {'Content-Type': undefined },
+                    transformRequest: angular.identity,
+                    data: plik
+                    });
+    }
 }
