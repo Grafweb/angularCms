@@ -2,8 +2,9 @@
 
 app.controller('ListSiteController', ListSiteController);
 
-ListSiteController.$inject = ['siteService','$filter'];
-function ListSiteController(siteService, $filter) {
+ListSiteController.$inject = ['$rootScope','$scope','siteService','$filter'];
+function ListSiteController($rootScope, $scope, siteService, $filter) {
+    $rootScope.load = true;
     var maxSite = 0;
     var fill = 0;
     var vm = this;
@@ -11,11 +12,12 @@ function ListSiteController(siteService, $filter) {
     vm.page = 0;
     vm.fillPagination = [];
     vm.fullList = [];
-   
+
     siteService.query(
         {},
         function succes(data) {
            vm.fullList = data; 
+           $scope.$emit('loading', { message: true });
         },
         function error(err) {
             //add logs
@@ -41,6 +43,7 @@ function ListSiteController(siteService, $filter) {
             if(vm.page > 0)  vm.page  = vm.page - vm.pageFill;
             return;
         }
+
     }
 
 

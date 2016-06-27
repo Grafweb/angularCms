@@ -27,7 +27,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
           $stmt->execute();
         $results=$stmt->fetchAll(PDO::FETCH_ASSOC);
         //$returnObject=$results;
-        $json=json_encode($results[0]);
+        $json=json_encode($results);
         
         echo $json;
         
